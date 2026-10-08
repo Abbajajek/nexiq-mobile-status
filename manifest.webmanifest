@@ -1,0 +1,11 @@
+{
+  "name": "NexIQ-NG Control",
+  "short_name": "NexIQ-NG",
+  "lang": "fa",
+  "dir": "rtl",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#0b1720",
+  "theme_color": "#0b1720",
+  "description": "Research-only NexIQ-NG status and bounded control surface"
+}

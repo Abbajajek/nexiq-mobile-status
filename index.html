@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1720">
+  <link rel="manifest" href="manifest.webmanifest">
+  <title>NexIQ-NG Control</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <header>
+      <h1>NexIQ-NG</h1>
+      <span id="state" class="badge">UNKNOWN</span>
+    </header>
+    <p id="summary">در انتظار وضعیت معتبر…</p>
+    <section class="cards">
+      <div><small>گیت تحقیق</small><strong id="gate">—</strong></div>
+      <div><small>آخرین heartbeat</small><strong id="heartbeat">—</strong></div>
+      <div><small>وضعیت job</small><strong id="job">—</strong></div>
+      <div><small>checkpoint</small><strong id="checkpoint">—</strong></div>
+    </section>
+    <section class="panel">
+      <h2>اقدام بعدی</h2>
+      <p id="next">—</p>
+    </section>
+    <section class="panel">
+      <h2>Paper runtime</h2>
+      <p id="paper">—</p>
+      <p id="paperHealth">—</p>
+    </section>
+    <section class="panel">
+      <h2>کنترل محدود</h2>
+      <button data-command="VIEW_STATUS">به‌روزرسانی وضعیت</button>
+      <button data-command="SUBMIT_SYNTHETIC_TEST">درخواست تست synthetic</button>
+      <button data-command="PAUSE_RESEARCH">توقف تحقیق</button>
+    </section>
+    <p class="note">کنترل‌ها فقط research-only هستند و به‌صورت درخواست stage می‌شوند.</p>
+  </main>
+  <script src="app.js"></script>
+  <script>if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");</script>
+</body>
+</html>

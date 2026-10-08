@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "nexiq-ng/mobile-command",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "request_id", "command", "created_at", "research_only"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "request_id": {"type": "string", "minLength": 1},
+    "command": {"enum": ["VIEW_STATUS", "REQUEST_STATUS_REFRESH", "SUBMIT_SYNTHETIC_TEST", "PAUSE_RESEARCH", "RESUME_RESEARCH"]},
+    "created_at": {"type": "string", "format": "date-time"},
+    "reason": {"type": "string", "maxLength": 500},
+    "research_only": {"const": true}
+  }
+}

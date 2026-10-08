@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "nexiq-ng/mobile-status",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "generated_at", "system_state", "research_gate", "last_heartbeat", "next_action"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "generated_at": {"type": "string", "format": "date-time"},
+    "system_state": {"enum": ["LIVE", "STALE", "UNREACHABLE", "BLOCKED"]},
+    "research_gate": {"enum": ["OPEN", "BLOCKED"]},
+    "last_heartbeat": {"type": ["string", "null"], "format": "date-time"},
+    "next_action": {"type": "string", "minLength": 1},
+    "job_id": {"type": ["string", "null"]},
+    "job_status": {"type": ["string", "null"]},
+    "checkpoint_ref": {"type": ["string", "null"]},
+    "result_ref": {"type": ["string", "null"]},
+    "transport_state": {"type": "string", "minLength": 1},
+    "paper_runtime_state": {"enum": ["PAPER_SHADOW_ACTIVE", "NOT_STARTED", "BLOCKED_SCOPE", "STALE_REPORT", "INVALID_REPORT", "RECOVERY_REQUIRED"]},
+    "gap_status": {"type": "string", "minLength": 1},
+    "gap_id": {"type": ["string", "null"]},
+    "paper_report_id": {"type": ["string", "null"]},
+    "paper_report_sha256": {"type": ["string", "null"]},
+    "paper_realized_net": {"type": ["number", "null"]},
+    "paper_ticket_count": {"type": "integer", "minimum": 0},
+    "paper_fill_count": {"type": "integer", "minimum": 0},
+    "paper_health_state": {"type": "string", "minLength": 1},
+    "paper_health_reason": {"type": ["string", "null"]},
+    "research_only": {"const": true}
+  }
+}
